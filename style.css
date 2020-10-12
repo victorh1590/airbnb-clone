@@ -4,8 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
-  font-size: 10px;
   color: #212121;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #212121;
@@ -38,7 +41,7 @@ header {
 .logo {
   width: 50%;
   display: inline-block;
-  font-size: 2.0em;
+  font-size: 1.25rem;
   text-align: left;
   background-color: rgba(0,0,0,0);
   color: #212121;
@@ -61,7 +64,7 @@ header {
   background-color: #ff7961;
   margin: 0;
   padding: 5% 3%;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 .column {
@@ -85,7 +88,7 @@ header {
   margin: auto 3% 5% 3%;
   background-color: #ffffff;
   text-align: justify;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -93,7 +96,7 @@ header {
 .text_content_main_title {
   display: block;
   text-align: left;
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 .text_content_author_date {
@@ -102,7 +105,7 @@ header {
   justify-content: space-between;
   width: inherit;
   height: auto;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #424242;
 }
 
@@ -119,7 +122,7 @@ header {
 #author_post{
   color: #212121;
   font-weight: bold;
-  font-size: 13.5px;
+  font-size: 0.8437rem;
 }
 
 #date_post{
@@ -138,13 +141,13 @@ header {
   width: 50%;
   display: inline-block;
   text-align: left;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #424242;
 }
 
 .text_content_socialmedia a {
   text-decoration: none;
-  font-size: 21px;
+  font-size: 1.3125rem;
 }
 
 i.fa-facebook-square {
@@ -182,10 +185,9 @@ i.fa-instagram-square {
 
 .button_link {
   border: none;
-  display: inline-block;
   background-color: gray;
   padding: 10px 25px;
-  font-size: 19px;
+  font-size: 1.1875rem;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -195,6 +197,10 @@ i.fa-instagram-square {
   min-height: 45px;
   margin: 5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .button_link:hover {
@@ -207,7 +213,7 @@ i.fa-instagram-square {
   flex-flow: row nowrap;
   justify-content: flex-start;
   background-color: white;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -244,7 +250,7 @@ i.fa-instagram-square {
   line-height: 45px;
   vertical-align: middle;
   width: auto;
-  font-size: 19px;
+  font-size: 1.1875rem;
   text-align: left;
 }
 
@@ -263,7 +269,7 @@ i.fa-instagram-square {
 }
 
 .multi_button:hover .multi_button_icon .fa-eye {
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 .multi_button:hover{
@@ -302,7 +308,7 @@ i.fa-instagram-square {
 } */
 
 .checkbox_container {
-  font-size: 18px;
+  font-size: 1.125rem;
   display: flex;
   flex-flow: column nowrap;
   width: auto;
@@ -324,7 +330,7 @@ i.fa-instagram-square {
   padding-left: 24px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   width: 20%;
   /* -webkit-user-select: none;
   -moz-user-select: none;
@@ -365,7 +371,7 @@ i.fa-instagram-square {
 }
 
 .checkmark .fa-check {
-  font-size: 18px;
+  font-size: 1.125rem;
   position: relative;
   display: none;
   top: -3px;
@@ -435,7 +441,7 @@ i.fa-instagram-square {
   height: auto;
   max-height: 20vh;
   background-color: #ffffff;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: justify;
   color: #212121;
   /* border-bottom: 2px solid #BDBDBD;
@@ -477,7 +483,7 @@ i.fa-instagram-square {
   border: none;
   background-color: #F44336;
   padding: 1vw 25px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #ffffff;
   text-decoration: none;
   text-align: center;
@@ -532,7 +538,7 @@ i.fa-instagram-square {
   text-align: justify;
   width: 100%;
   /* height: 100%; */
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #ffffff;
   background-color: rgba(0,0,0,0);
   padding: 32px;
@@ -542,7 +548,7 @@ i.fa-instagram-square {
 .ad_card_text_title {
   text-align: center;
   display: block;
-  font-size:  24px;
+  font-size: 1.5rem;
 }
 
 /* .ad_card_link {
@@ -619,9 +625,15 @@ i.fa-instagram-square {
   width: auto;
   max-width: 500px;
   height: auto;
-  font-size: 2vh;
+  font-size: 4vh;
   color: white;
   opacity: 0;
+}
+
+.image_banner_text .button_link {
+  font-size: 2.5vh;
+  max-width: 100%;
+  /* line-height: 100%; */
 }
 
 .image_banner_text_animation {
@@ -647,7 +659,7 @@ i.fa-instagram-square {
 /* Footer */
 .site_footer {
   width: 100%;
-  height: 25vh;
+  height: 20vh;
   background-color: #212121;
   position: relative;
   bottom: 0;
@@ -671,11 +683,11 @@ i.fa-instagram-square {
 
 .footer_menu {
   color: #ffffff;
-  font-size: 2vh;
+  font-size:  1vw;
   width: 100%;
   height: 100%;
   padding: 0;
-  margin: 10%;
+  margin: 10px;
   list-style: none;
   display: flex;
   flex-flow: column nowrap;
@@ -709,7 +721,7 @@ i.fa-instagram-square {
 
 .footer_credits {
   /* text-align: center; */
-  font-size: 1.5vh;
+  font-size: 	1vw;
   font-weight: normal;
 }
 
@@ -721,7 +733,7 @@ i.fa-instagram-square {
 
 
 .menu_container {
-  font-size: 10px;
+  /* font-size: 100%; */
   position: absolute;
   right: 0;
   top: 0;
@@ -758,7 +770,7 @@ i.fa-instagram-square {
   padding: 0;
   width: 30px;
   height: 30px;
-  font-size: 25px;
+  font-size: 1.5625rem;
   border: none;
 }
 
@@ -790,7 +802,7 @@ i.fa-instagram-square {
   border-bottom: 10px solid #424242;
   text-align: left;
   color: #FFFFFF;
-  font-size: 2.0em;
+  font-size: 1.25rem;
 }
 
 .menu_item a {
@@ -798,12 +810,12 @@ i.fa-instagram-square {
   height: 50px;
   line-height: 50px;
   color: #212121;
-  font-size: 1.6em;
+  font-size: 1rem;
   text-align: left;
 }
 
 .menu_item a div i {
-  font-size: 1.1em;
+  font-size: 1.25rem;
   padding-left: 50%;
 }
 
@@ -861,9 +873,10 @@ i.fa-instagram-square {
   right: 0%;
   top: 0%;
   background-color: #212121;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: white;
   border: none;
+  line-height: 100%;
   border-radius: 4px;
 }
 
@@ -887,5 +900,70 @@ i.fa-instagram-square {
   .warning {
     width: 100%;
     left: 0;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+
+  .image_banner_text .button_link {
+    font-size: 1.25vh;
+    max-width: 400px;
+  }
+
+  .image_banner_text {
+    font-size: 3vh;
+    max-width: 500px;
+  }
+  .site_footer {
+    height: auto;
+  }
+  .container {
+    flex-flow: row wrap;
+  }
+  .footer_menu {
+    font-size: 1.2vh;
+    margin: 10px;
+  }
+  .footer_credits {
+    font-size: 1vh;
+  }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 1080px) {
+  .image_banner_trapeze {
+    opacity: 0;
+  }
+  .image_banner_text  {
+    display: none;
+  }
+}
+
+@media only screen and (orientation: portrait) and (min-height: 4000px) and (max-width: 1600px) {
+  .image_banner_trapeze {
+    opacity: 0;
+  }
+  .image_banner_text  {
+    display: none;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .site_footer {
+    height: auto;
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-height: 600px) {
+  .site_footer {
+    height: auto;
+  }
+
+  .footer_elements {
+    flex-flow: column wrap;
+  }
+  
+  .footer_menu {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
   }
 }

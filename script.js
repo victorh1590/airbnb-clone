@@ -58,8 +58,6 @@ const menu_fx = function(animation_duration) {
   //Callback function: Reativa botão após conclusão.
   function(){
     menu_callback(button_selector);
-    // $(".main_container").css({ "opacity" : "0.5" });
-    // $(".main_container").css({ "opacity" : "1" });
   });
 }
 
