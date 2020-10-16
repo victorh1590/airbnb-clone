@@ -1,0 +1,383 @@
+<!-- Author: Victor H F - 2020 -->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Card Slide In when scroll down.">
+  <meta name="author" content="Victor H F (cd9k)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://kit.fontawesome.com/50216e6b20.js" crossorigin="Secure"></script>
+</head>
+<body onload="onloadCardPositionCategorization()" class="mid_black_bt">
+  <!-- <div class="viewport_detector">
+    <button onclick="lastCardContent()">Last Child Content</button>
+    <p class="vd_textbox"></p>
+  </div> -->
+  <header>
+    <div class="header_logo">
+      <div class="logo">
+        Tem<span class="vaga">Vaga</span>Aí<span class="vaga">?</span>
+      </div>
+      <div class="menu_button_container">
+        <button type="button" class="menu_button"><i class="fas fa-times"></i></button>
+      </div>
+      <nav class="menu_container">
+        <ul class="menu_side">
+          <li class="menu_item"><div class="menu_logo">Menu</div></li>
+          <li class="menu_item"><a href="#" class="active_menu"><div><i class="fas fa-home"></i></div>Home</a></li>
+          <li class="menu_item"><a href="#"><div><i class="fas fa-paper-plane"></i></div>Reserva</a></li>
+          <li class="menu_item"><a href="#"><div><i class="fas fa-envelope"></i></div>Contato</a></li>
+          <li class="menu_item"><a href="#"><div><i class="fas fa-info-circle"></i></div>Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="main_container white_bt">
+    <div class="image_banner">
+      <div class="image_banner_frame">
+        <div class="image_banner_imgdiv">
+          <div class="image_banner_trapeze">
+            <span class="image_banner_text">
+              Pronto para viajar?
+              <br>
+              <a href="#" class="button_link indigo_bt">CLICK AQUI</a>
+            </span>
+            <img src="images/banner_trapeze.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_container white_bt"  style="max-width: 2500px; margin: 0 auto;">
+      <div class="card_column">
+        <div class="card_row">
+          <div class="card_container_label">
+            Hospede-se nos melhores locais
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/1.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/2.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/3.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/4.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/5.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/6.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/7.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/8.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/9.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/10.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/11.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/12.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/13.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/14.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/15.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/16.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/17.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="card_content">
+            <div class="card_image_frame">
+              <div class="card_image">
+                <img src="images/18.jpg">
+              </div>
+            </div>
+            <div class="card_text">
+              <span class="card_text_content">{Texto} - Nullam rhoncus venenatis sapien id euismod.</span>
+              <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            </div>
+            <div class="card_button">
+              <a href="#" class="card_button_link indigo_bt">
+                <span class="card_button_text">VISUALIZAR</span>
+                <span class="card_button_text"><i class="fas fa-eye"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="site_footer light_grey_bt">
+        <div class="footer_elements">
+          <ul class="footer_menu">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">RESERVA</a></li>
+            <li><a href="#">CONTATO</a></li>
+            <li><a href="#">SOBRE</a></li>
+          </ul>
+          <span class="footer_credits">TemVagaAí? (2020) - Victor Hugo Faria (5962) - Images by unsplash.com</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>    

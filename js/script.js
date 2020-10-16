@@ -77,3 +77,103 @@ $(document).ready(function(){
   //A linha abaixo ativa a animação do banner.
   $("body").on('load', bannerTrapezeAnimation());
 });
+
+
+/*TESTING*/
+//Encontra último card_content
+function lastCardContent() {
+  let vd_indicator = document.querySelector(".vd_textbox");
+  let last_row = document.querySelector(".card_column").lastElementChild;
+  console.log(document.querySelector(".card_column").lastElementChild.innerHTML);
+  let current_card = last_row.lastElementChild;
+  let current_card_content = current_card.querySelector(".card_text").textContent;
+  console.log(vd_indicator.innerHTML + " and " + current_card.innerHTML);
+  positionalData(current_card, vd_indicator);
+  // vd_indicator.textContent = current_card_content;
+  return;
+};
+
+
+//Verifica coordenadas do elemento.
+function positionalData(current_card, vd_indicator){
+  var current_card_position = current_card.getBoundingClientRect();
+  var result_string = '';
+  for(var key in current_card_position){
+    console.log("%s : %s", key, current_card_position[key]);
+    result_string += key.toString() + " : " + current_card_position[key].toString() + "<br>";
+  }
+  console.log(window.innerHeight);
+  console.log(window.scrollY);
+  vd_indicator.innerHTML+= "<br>";
+  cardIsVisible_test(current_card, vd_indicator);
+  vd_indicator.innerHTML+= "<br>" + result_string;
+  return;
+}
+
+//Verifica se o card está visível.
+function cardIsVisible_test(current_card, vd_indicator) {
+  var viewport_height = window.innerHeight;
+  var lastcard_position = current_card.getBoundingClientRect();
+  var viewport_y_start = window.scrollY;
+  var viewport_y_end = window.scrollY + viewport_height;
+  console.log(lastcard_position.top + " : " + viewport_y_start + " : " + viewport_y_end);
+
+  // if (lastcard_position.top > viewport_y_end && lastcard_position.bottom < viewport_y_start) {
+  //   vd_indicator.innerHTML+= "Not visible";
+  // } else {
+  //   vd_indicator.innerHTML+= "Visible";
+  // }
+
+  if (lastcard_position.top > viewport_height) {
+    // vd_indicator.innerHTML+= "Not visible";
+    return false;
+  } else {
+    // vd_indicator.innerHTML+= "Visible";
+    return true;
+  }
+  // if(viewport_height)
+}
+
+//Verifica se o card está visível.
+function cardIsVisible(current_card) {
+  var viewport_height = window.innerHeight;
+  var lastcard_position = current_card.getBoundingClientRect();
+  // var viewport_y_start = window.scrollY;
+  // var viewport_y_end = window.scrollY + viewport_height;
+  // console.log(lastcard_position.top + " : " + viewport_y_start + " : " + viewport_y_end);
+  if (lastcard_position.top > viewport_height) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function onloadCardPositionCategorization() {
+  var test_card = document.querySelector(".card_column > .card_row > .card_content");
+  console.log(test_card.innerHTML);
+  var all_cards = document.querySelectorAll(".card_content");
+
+  for(let i = 0; i < all_cards.length; i++) {
+    if(cardIsVisible(all_cards.item(i))){
+      all_cards.item(i).classList.add("already_shown");
+    }
+  }
+  add_scroll_event_listener();
+}
+
+function onscrollNewCardAppears() {
+  var test_card = document.querySelector(".card_column > .card_row > .card_content");
+  var all_cards = document.querySelectorAll(".card_content");
+
+  for(let i = 0; i < all_cards.length; i++) {
+    if(cardIsVisible(all_cards.item(i)) && !(all_cards.item(i).classList.contains("already_shown"))){
+      all_cards.item(i).classList.add("come-in");
+      all_cards.item(i).classList.add("already_shown"); 
+    }
+  }
+  return;
+}
+
+function add_scroll_event_listener() {
+  document.addEventListener("scroll", onscrollNewCardAppears);
+}
