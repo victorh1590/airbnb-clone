@@ -34,7 +34,7 @@
     </div>
   </header>
   <div class="main_container white_bt">
-    <div class="main_container white_bt"  style="max-width: 2500px; margin: 0 auto;">
+    <div class="main_container white_bt" style="max-width: 1100px; margin: 0 auto;">
       <div class="text_content" id="checkin_instance">
         <div class="card_container_label">
           Apartamento em Belo Horizonte.
@@ -56,20 +56,15 @@
             </span>
           </div>
         </div>
-        <div class="product_image_row">
-          <div class="card_image_frame">
-            <div class="card_image" id="checkin_img_1">
-              <img src="images/18.jpg">
-            </div>
-          </div>
-          <div class="card_image_frame">
-            <div class="card_image" id="checkin_img_2">
-              <img src="images/19.jpg">
-            </div>
-          </div>
-          <div class="card_image_frame">
-            <div class="card_image" id="checkin_img_3">
-              <img src="images/20.jpg">
+        <div class="carousel_container">
+          <div class="carousel_frame"></div>
+          <div class="carousel_interface">
+            <button class="carousel_button" id="carousel_last" onclick="clickCarousel(0)" disabled><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel_button" id="carousel_next" onclick="clickCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel_dot_row">
+              <span class="carousel_dot active_dot" id="dot_1"></span>
+              <span class="carousel_dot" id="dot_2"></span>
+              <span class="carousel_dot" id="dot_3"></span>
             </div>
           </div>
         </div>
@@ -122,20 +117,6 @@
               </div>
             </div>
           </div>
-          <form class="form_content" id="checkin_form_container" action="https://www.w3schools.com/action_page.php">
-            <span class="checkin_description_title" id="checkin_form_title">Faça sua reserva<br></span>
-            <div class="checkin_calendar">
-              <div class=checkin_calendar_item>
-              <label for="checkin_date">Data do Check-in<br></label>
-              <input type="date" id="checkin_date" name="checkin_date">
-              </div>
-              <div class=checkin_calendar_item>
-              <label for="checkin_date">Data do Check-out<br></label>
-              <input type="date" id="checkin_date" name="checkin_date">
-              </div>
-            </div>  
-            <a href='#' onclick='this.parentNode.submit(); return false;' class="button_link indigo_bt" id="checkin_submit">RESERVAR</a>
-          </form>
           <div class="text_content px16_font" id="checkin_description">
             <ul class="checkin_description_rooms">
               <span class="bold_text">Cômodos:</span>
@@ -151,10 +132,26 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a turpis pellentesque, consectetur nulla non, volutpat libero. Fusce auctor lectus et felis gravida convallis. Quisque a lacinia mauris, at porta mauris. Nulla ut magna sed nunc maximus venenatis. Mauris efficitur massa enim, sit amet viverra ipsum viverra a. Nam id massa ante. Aenean a cursus dolor. Proin venenatis leo at leo euismod ullamcorper. Donec eu lorem enim. Fusce elementum arcu odio, eu pretium risus pellentesque et. Mauris eu magna lorem. Integer quis bibendum diam. Suspendisse nisl enim, pellentesque sed congue eget, eleifend et leo. Aliquam tristique felis lorem, ut congue nibh tristique vel.
             Aliquam erat volutpat. Proin quis odio blandit, sollicitudin dui quis, viverra nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed facilisis mi efficitur vulputate ultricies. Ut convallis ipsum eu dapibus bibendum. Vivamus ipsum lectus, varius ac elementum et, egestas sed mi. Sed in mollis ligula. Sed sapien neque, tempus quis blandit ac, sodales vitae urna. Cras dolor nibh, imperdiet nec venenatis in, sollicitudin eget risus. Phasellus ultrices facilisis purus, sit amet tempus odio congue non. Donec nisi orci, ullamcorper sit amet purus sit amet, vulputate convallis augue.
           </div>
+          <form class="form_content" id="checkin_form_container" action="https://www.w3schools.com/action_page.php">
+            <span class="checkin_description_title" id="checkin_form_title">Faça sua reserva<br></span>
+            <div class="checkin_calendar">
+              <div class=checkin_calendar_item>
+              <label for="checkin_date">Data do Check-in<br></label>
+              <input type="date" id="checkin_date" name="checkin_date">
+              </div>
+              <div class=checkin_calendar_item>
+              <label for="checkin_date">Data do Check-out<br></label>
+              <input type="date" id="checkin_date" name="checkin_date">
+              </div>
+            </div>
+            <br>
+            <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            <a href='#' onclick='this.parentNode.submit(); return false;' class="button_link indigo_bt" id="checkin_submit">RESERVAR</a>
+          </form>
         </div>
       </div>
     </div>
-    <footer class="site_footer light_grey_bt">
+    <footer class="site_footer light_grey_bt" style="max-width: 1920px; margin-left: auto; margin-right: auto;">
       <div class="footer_elements">
         <ul class="footer_menu">
           <li><a href="#">HOME</a></li>
