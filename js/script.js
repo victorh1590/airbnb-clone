@@ -63,22 +63,6 @@ const menuFX = function(animation_duration) {
   });
 }
 
-//Chama funções necessárias após carregamento da página.
-$(document).ready(function(){
-  let button_selector = $(".menu_button");
-  let menu_selector = $(".menu_container");
-  //No momento do carregamento o menu está escondido.
-  // As três linhas abaixo fazem o menu visível e
-  // corrigem alguns comportamentos inesperados no
-  // carregamento.
-  menu_selector.show();
-  menuFX(1);
-  button_selector.click(function() {menuFX();});
-  //A linha abaixo ativa a animação do banner.
-  $("body").on('load', bannerTrapezeAnimation());
-});
-
-
 /*TESTING*/
 //Encontra último card_content
 function lastCardContent() {
@@ -92,7 +76,6 @@ function lastCardContent() {
   // vd_indicator.textContent = current_card_content;
   return;
 };
-
 
 //Verifica coordenadas do elemento.
 function positionalData(current_card, vd_indicator){
@@ -108,30 +91,6 @@ function positionalData(current_card, vd_indicator){
   cardIsVisible_test(current_card, vd_indicator);
   vd_indicator.innerHTML+= "<br>" + result_string;
   return;
-}
-
-//Verifica se o card está visível.
-function cardIsVisible_test(current_card, vd_indicator) {
-  var viewport_height = window.innerHeight;
-  var lastcard_position = current_card.getBoundingClientRect();
-  var viewport_y_start = window.scrollY;
-  var viewport_y_end = window.scrollY + viewport_height;
-  console.log(lastcard_position.top + " : " + viewport_y_start + " : " + viewport_y_end);
-
-  // if (lastcard_position.top > viewport_y_end && lastcard_position.bottom < viewport_y_start) {
-  //   vd_indicator.innerHTML+= "Not visible";
-  // } else {
-  //   vd_indicator.innerHTML+= "Visible";
-  // }
-
-  if (lastcard_position.top > viewport_height) {
-    // vd_indicator.innerHTML+= "Not visible";
-    return false;
-  } else {
-    // vd_indicator.innerHTML+= "Visible";
-    return true;
-  }
-  // if(viewport_height)
 }
 
 //Verifica se o card está visível.
@@ -177,3 +136,151 @@ function onscrollNewCardAppears() {
 function add_scroll_event_listener() {
   document.addEventListener("scroll", onscrollNewCardAppears);
 }
+
+/*Carousel Functions*/
+//Este objeto será utilizados nas próximas etapas do projeto.
+const photo_list = {
+  size: 3,
+  images: [
+    "images/carousel/3.jpg",
+    "images/carousel/2.jpg",
+    "images/carousel/1.jpg"
+  ]
+}
+
+//Encontra qual ponto (imagem) está ativa no momento.
+const findActiveDot = function (dots) {
+  for (let i = 0; i < dots.length; i++) {
+    if (dots.item(i).classList.contains('active_dot')) {
+      return i;
+    }
+  }
+} 
+
+//Reseta todos os pontos ativos.
+const resetActiveDot = function (active_dot, dots) {
+  dots.item(active_dot).classList.remove('active_dot');
+  return;
+}
+
+//Ativa um novo ponto com a mudança de imagens.
+const newActiveDot = function (active_dot, dots, action) {
+  if (action === 0) {
+    active_dot = active_dot - 1;
+    dots.item(active_dot).classList.add('active_dot');
+    return active_dot;
+  } else if (action === 1) {
+    active_dot = active_dot + 1;
+    dots.item(active_dot).classList.add('active_dot');
+    return active_dot;
+  }
+}
+
+//Remove o atributo "disabled" de todos os botões (last e next).
+const resetInactiveButtons = function (buttons) {
+  for (let i = 0; i < buttons.length; i++) {
+    if(buttons.item(i).hasAttribute('disabled')) {
+      buttons.item(i).removeAttribute('disabled');
+      // console.log(buttons.item(i));
+      return;
+    }
+  }
+}
+
+//Desativa algum botão (adiciona tag disabled).
+const deactivateButtons = function (active_dot) {
+  if (active_dot === 2) {
+    document.getElementById('carousel_next').setAttribute('disabled', true);
+    return;
+  } else if (active_dot === 0) {
+    document.getElementById('carousel_last').setAttribute('disabled', true);
+    return;
+  } else {
+    return;
+  }
+}
+
+//Muda imagem do carrossel.
+const changeImage = function (active_dot) {
+  var carousel_frame = document.getElementsByClassName('carousel_frame').item(0);
+  carousel_frame.style.backgroundImage = `url('${photo_list.images[active_dot]}')`;
+  // console.log(photo_list.images[active_dot]);
+  // console.log(carousel_frame);
+  return;
+}
+
+/*
+  Muda imagem, ponto ativo e botões quando Last ou Next são clickados.
+  @param action:
+    0 = Last ( < )
+    1 = Next ( > )
+*/
+const clickCarousel = function (action) {
+  var buttons = document.getElementsByClassName('carousel_button');
+  var dots = document.getElementsByClassName('carousel_dot');
+  var active_dot = findActiveDot(dots);
+  resetActiveDot(active_dot, dots);
+  active_dot = newActiveDot(active_dot, dots, action);
+  resetInactiveButtons(buttons);
+  deactivateButtons(active_dot);
+  changeImage(active_dot);
+  return;
+}
+
+/*Muda imagem do banner de 5 em 5 segundos*/
+//Contador.
+const imageBannerCounter = (function () {
+  var counter = -1;
+  function resetCounter() { 
+    if (counter === (photo_list.size - 1)) {
+      return -1;
+    } else {
+      return counter;
+    }
+  }
+  function addCounter() {
+    counter = counter + 1;
+    return counter;
+  }
+
+  return function () {
+    counter = resetCounter(); 
+    counter = addCounter(); 
+    return counter};
+})();
+
+//Muda imagem do banner.
+const imageBannerChanger = function () {
+  var index;
+  index = imageBannerCounter();
+  try {
+    var image_banner = document.getElementsByClassName("image_banner_imgdiv").item(0);
+    image_banner.style.backgroundImage = `url('${photo_list.images[index]}')`;
+    return; 
+  } catch(TypeError) {
+    return;
+  } finally {
+    return;
+  }
+}
+
+//Ativa mudança do banner num intervalo definido em ms.
+const imageBannerInterval = function () {
+  setInterval(imageBannerChanger, 8000);
+}
+
+//Chama funções necessárias após carregamento da página.
+$(document).ready(function(){
+  let button_selector = $(".menu_button");
+  let menu_selector = $(".menu_container");
+  //No momento do carregamento o menu está escondido.
+  // As três linhas abaixo fazem o menu visível e
+  // corrigem alguns comportamentos inesperados no
+  // carregamento.
+  menu_selector.show();
+  menuFX(1);
+  button_selector.click(function() {menuFX();});
+  //A linha abaixo ativa a animação do banner.
+  $("body").on('load', bannerTrapezeAnimation());
+  $("body").on('load', imageBannerInterval());
+});
