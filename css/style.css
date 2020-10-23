@@ -470,11 +470,11 @@ i.fa-instagram-square {
 
 .card_content {
   box-sizing: border-box;
-  min-width: 300px;
+  min-width: 350px;
   flex-basis: 30%;
   /* width: auto; */
   /* max-width: 100%; */
-  max-width: 500px;
+  max-width: 400px;
   background-color: #ffffff;
   /* margin: auto 3% 5% 0; */
   /* margin: 25px 20px; */
@@ -499,14 +499,13 @@ i.fa-instagram-square {
 }
 
 .card_image {
-  width: 100%;
+  min-width: 70%;
+  width: auto;
   height: 300px;
   background-color: #ffffff;
   overflow: hidden;
   display: flex;
   justify-content: space-evenly;
-  /* border-top-left-radius: 4px;
-  border-top-right-radius: 4px; */
   box-sizing: border-box;
   margin-top: 0;
   margin-bottom: auto;
@@ -529,6 +528,7 @@ i.fa-instagram-square {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .card_text {
@@ -629,9 +629,17 @@ i.fa-instagram-square {
 }
 
 /*Landing Page - Elements */
+#ad_card_external {
+  max-width: 800px;
+  max-height: 800px;
+}
+
 .ad_card_container {
+  min-width: 300px;
   width: 100%;
+  max-width: 800px;
   height: auto;
+  max-height: 800px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -644,7 +652,7 @@ i.fa-instagram-square {
 .ad_card_text {
   text-align: justify;
   width: 100%;
-  /* height: 100%; */
+  max-height: 600px;
   font-size: 0.875rem;
   color: #ffffff;
   background-color: rgba(0,0,0,0);
@@ -658,13 +666,19 @@ i.fa-instagram-square {
   font-size: 1.5rem;
 }
 
+.ad_card_link {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Image Banner */
 .image_banner {
   display: block;
   width: 100%;
-  height: 50vh;
+  max-width: 1920px;
+  height: 500px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   background-color: white;
 }
 
@@ -683,12 +697,17 @@ i.fa-instagram-square {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-image: url("../images/6429_cropped_compressed.jpg");
+  
+  background-image: url("../images/carousel/1.jpg");
   background-attachment: scroll;
-  background-origin: center left;
+  background-position-x: center;
+  background-position-y: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  transition: all 1s linear 0.5s;
 }
+
 
 .image_banner_trapeze {
   width: 100%;
@@ -726,13 +745,13 @@ i.fa-instagram-square {
   width: auto;
   max-width: 500px;
   height: auto;
-  font-size: 4vh;
+  font-size: 2rem;
   color: white;
   opacity: 0;
 }
 
 .image_banner_text .button_link {
-  font-size: 2.5vh;
+  font-size: 1.25rem;
   max-width: 100%;
 }
 
@@ -985,8 +1004,15 @@ i.fa-instagram-square {
 /*Check-in Page Custom Containers*/
 #checkin_instance {
   margin: 0 !important;
-  padding: 50px 100px !important;
+  padding: 10px;
+  overflow: hidden;
+  /* padding: 50px 100px !important; */
   /* max-width: 2500px !important; */
+}
+
+.scrollable_image_div {
+  min-width: 1000px;
+  /* overflow: hidden; */
 }
 
 .product_image_row {
@@ -995,6 +1021,8 @@ i.fa-instagram-square {
   justify-content: center;
   align-items: center;
   align-content: center;
+  min-width: 1000px;
+  /* overflow: scroll; */
 }
 
 .product_image_row .card_image_frame {
@@ -1031,10 +1059,13 @@ i.fa-instagram-square {
 .checkin_description_topics {
   width: 50%;
   height: auto;
-  margin-right: 10px;
+  min-height: 230px;
+  margin-right: 15px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
   text-align: left;
 }
 
@@ -1082,11 +1113,14 @@ i.fa-instagram-square {
 }
 
 #checkin_description {
-  width: 100%;
+  width: 45%;
   max-width: 500px;
-  display: block;
-  margin: 0;
+  display: block !important;
+  margin-left:5px;
+  margin-right: 5px;
   padding-top: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   border: none;
   box-shadow: none;
 }
@@ -1181,6 +1215,128 @@ i.fa-instagram-square {
   to { transform: translateY(0); }
 }
 
+/*Carousel*/
+.carousel_container {
+  width: 100%;
+  max-width: 1100px;
+  height: 360px;
+
+  position: relative;
+}
+
+.carousel_frame {
+  width: 100%;
+  max-width: 1100px;
+  height: 300px;
+
+  background-image: url('../images/carousel/1.jpg');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  background-size: cover;
+  background-origin: content-box;
+
+  position: relative;
+  top: 0;
+  left: 0;
+
+  border-radius: 8px;
+
+  transition: background-image ease-out 0.3s;
+}
+
+.carousel_interface {
+  width: 300px;
+  height: 60px;
+
+  position: relative;
+  
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: #FFFFFF;
+}
+
+.carousel_button {
+  width: 40px;
+  height: 40px;
+
+  color: #FFFFFF;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+  
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: #212121;
+
+  border: 5px double #ffffff;
+}
+
+.carousel_button:disabled {
+  background-color: #BDBDBD !important;
+}
+
+#carousel_next.carousel_button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+#carousel_last.carousel_button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.fa-chevron-right {
+  transform: translateX(10%);
+}
+
+.fa-chevron-left {
+  transform: translateX(-10%);
+}
+
+.carousel_button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.carousel_dot_row {
+  width: 180px;
+  height: 40px;
+
+  position: absolute;
+  top: 10px;
+  left: 60px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.carousel_dot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 6px;
+  border: 2px solid #212121;
+  margin: 10px;
+
+  display: block;
+
+  background-color: #ffffff;
+}
+
+.active_dot {
+  background-color: #212121 !important;
+}
+
 /*Colors*/
 .material_mid_purple_bt { background-color: #aa00ff; }
 .material_dark_purple_bt { background-color: #7200ca; }
@@ -1247,7 +1403,7 @@ i.fa-instagram-square {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1200px) {
   .row {
     flex-flow: row wrap;
   }
@@ -1255,15 +1411,6 @@ i.fa-instagram-square {
     flex-basis: 45%;
   }
 }
-
-/* @media only screen and (max-width: 1000px) {
-  .card_column {
-    width: 100%;
-  }
-  .card_row {
-    flex-flow: column wrap;
-  }
-} */
 
 @media only screen and (max-width: 900px) {
   .container, .row {
@@ -1275,9 +1422,9 @@ i.fa-instagram-square {
   .row .generic_content:not(:first-child){
     margin-left: 3% !important;
   }
-  /* .card_row {
-    flex-flow: column wrap;
-  }*/
+  .card_content {
+    flex-basis: 60% !important;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -1293,24 +1440,29 @@ i.fa-instagram-square {
   }
   .checkin_description_topics {
     width: 100%;
+    margin-right: 0;
+    justify-content: center;
   }
   .checkin_description_topics_item {
+    width: 80%;
+  }
+  #checkin_description {
     width: 100%;
   }
 }
 
-@media only screen and (orientation: portrait) {
-  .image_banner_text .button_link {
-    font-size: 1.25vh;
-    max-width: 400px;
+@media only screen and (max-width: 450px) {
+  .card_container_sublabel {
+    flex-flow: row wrap;
   }
+}
 
-  .image_banner_text {
-    font-size: 3vh;
-    max-width: 500px;
-  }
+@media only screen and (orientation: portrait) {
   .container {
     flex-flow: row wrap;
+  }
+  .card_content {
+    flex-basis: 70%;
   }
 }
 
@@ -1357,8 +1509,8 @@ i.fa-instagram-square {
 }
 
 @media only screen and (min-height: 2500px) {
-  .container, .row {
-    flex-flow: row wrap;
+  .container {
+    flex-flow: column nowrap;
   }
   .row .generic_content {
     flex: 90%;
@@ -1368,22 +1520,8 @@ i.fa-instagram-square {
   }
 }
 
-/* @media only screen and (orientation: portrait) {
-  .card_column {
-    width: 100%;
-    flex-flow: column wrap;
-  }
-  .card_row {
-    flex-flow: row wrap;
-  }
-  .card_content {
-    width: 33%;
-    flex-basis: 100%;
-  }
-} */
-
 @media only screen and (max-width: 1280px) {
   .card_content {
-    flex-basis: 40%;
+    flex-basis: 50%;
   }
 }
