@@ -1,6 +1,10 @@
 <!-- Author: Victor H F (5962) - 2020 -->
 <!DOCTYPE html>
 <html lang="pt-br">
+<head>
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
   <meta charset="UTF-8">
   <meta title="Tem Vaga Aí?">
   <meta name="description" content="Home Page">
@@ -12,27 +16,31 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </head>
-<body class="mid_black_bt">
+<body class="mid_black_bt" id="home_page" onload="bannerTrapezeAnimation(); imageBannerInterval();">
   <header>
-    <div class="header_logo">
-      <div class="logo">
+    <div class="header_logo" id="visible_cont_1">
+      <div class="logo" id="visible_element_1">
         Tem<span class="vaga">Vaga</span>Aí<span class="vaga">?</span>
       </div>
-      <div class="menu_button_container">
-        <button type="button" class="menu_button"><i class="fas fa-times"></i></button>
+      <div class="palette_button_container">
+       <button type='button' class="palette_button" id="palette_button" onclick="changePaletteButton();"><i class="fas fa-lightbulb"></i></button>
+      </div>
+      <div class="menu_button_container" >
+        <button type="button" class="menu_button" id="visible_element_3"><i class="fas fa-times"></i></button>
       </div>
       <nav class="menu_container">
         <ul class="menu_side">
           <li class="menu_item"><div class="menu_logo">Menu</div></li>
-          <li class="menu_item"><a href="#" class="active_menu"><div><i class="fas fa-home"></i></div>Home</a></li>
-          <li class="menu_item"><a href="#"><div><i class="fas fa-paper-plane"></i></div>Reserva</a></li>
-          <li class="menu_item"><a href="#"><div><i class="fas fa-envelope"></i></div>Contato</a></li>
-          <li class="menu_item"><a href="#"><div><i class="fas fa-info-circle"></i></div>Sobre</a></li>
+          <li class="menu_item"><a href="index.html" class="active_menu"><div><i class="fas fa-home"></i></div>Home</a></li>
+          <li class="menu_item"><a href="products.html"><div><i class="fas fa-paper-plane"></i></div>Reserva</a></li>
+          <li class="menu_item"><a href="cadastro.php"><div><i class="fas fa-plus-circle"></i></div>Cadastrar</a></li>
+          <li class="menu_item"><a href="controlpanel.php"><div><i class="fas fa-list-alt"></i></div>Gerenciar</a></li>
+          <li class="menu_item"><a href="about.html"><div><i class="fas fa-info-circle"></i></div>Sobre</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <div class="main_container">
+  <div class="main_container" id="visible_cont_2">
     <div class="image_banner">
       <div class="image_banner_frame">
         <div class="image_banner_imgdiv">
@@ -40,48 +48,75 @@
             <span class="image_banner_text">
               Pronto para viajar?
               <br>
-              <a href="#" class="button_link indigo_bt">CLICK AQUI</a>
+              <a href="products.html" class="button_link indigo_bt">CLICK AQUI</a>
             </span>
             <img src="images/banner_trapeze.svg">
           </div>
         </div>
       </div>
     </div>
-    <div class="main_container white_bt"  style="max-width: 1920px; margin: 0 auto;">
-      <div class="row">
+    <div class="main_container index_container">
+      <form class='search_form' id='search_form' style='margin-left: auto; margin-right: auto; margin-top: 30px;'>
+        <input 
+        class='search_box'
+        id='search_box' 
+        placeholder="Buscar um imóvel (cidade, categoria ou código)."
+        type="text">
+        <a onclick="redirectSearch();" class="button_link search_button indigo_bt" id="cadastro_submit">
+        <i class="fas fa-search"></i>
+        </a>
+      </form>
+      <div class="row" id='visible_cont_3'>
         <div class="generic_content light_vivid_green_bt" id="ad_card_external">
-          <div class="ad_card_container vivid_green_bt">
+          <div class="ad_card_container white_bt">
             <div class="ad_card_text">
-              <span class="ad_card_text_title">Título {CARTÃO AD}</span>
+              <span class="ad_card_text_title">Quem somos?</span>
               <hr>
-              Aliquam erat volutpat. Proin quis odio blandit, sollicitudin dui quis, viverra nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed facilisis mi efficitur vulputate ultricies. Ut convallis ipsum eu dapibus bibendum. Vivamus ipsum lectus, varius ac elementum et, egestas sed mi. Sed in mollis ligula. Sed sapien neque, tempus quis blandit ac, sodales vitae urna. Cras dolor nibh, imperdiet nec venenatis in, sollicitudin eget risus. Phasellus ultrices facilisis purus, sit amet tempus odio congue non. Donec nisi orci, ullamcorper sit amet purus sit amet, vulputate convallis augue.
-            </div>
-            <div class="ad_card_link">
-              <a href="#" class="button_link indigo_bt">CLICK AQUI</a>
+              O TemVagaAí? é uma plataforma web para conectar pessoas que
+              querem alugar e pessoas que querem se hospedar. Nossa equipe
+              acredita na tecnologia como uma forma de agilizar negócios
+              e facilitar nossas vidas. Nossas soluções são desenvolvidas
+              pensando na praticidade e confiabilidade. Faça o teste!
+              <div class="ad_sticker_container">
+                <img src="images/sticker-red.png" class="ad_sticker">
+                <span class="ad_sticker_text"><i class="far fa-handshake"></i></span>
+              </div>
             </div>
           </div>
         </div>
         <div class="generic_content indigo_bt" id="ad_card_external">
-          <div class="ad_card_container dark_indigo_bt">
+          <div class="ad_card_container white_bt">
             <div class="ad_card_text">
-              <span class="ad_card_text_title">Título {CARTÃO AD}</span>
+              <span class="ad_card_text_title">Legal! Como faço pra alugar?</span>
               <hr>
-              Aliquam erat volutpat. Proin quis odio blandit, sollicitudin dui quis, viverra nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed facilisis mi efficitur vulputate ultricies. Ut convallis ipsum eu dapibus bibendum. Vivamus ipsum lectus, varius ac elementum et, egestas sed mi. Sed in mollis ligula. Sed sapien neque, tempus quis blandit ac, sodales vitae urna. Cras dolor nibh, imperdiet nec venenatis in, sollicitudin eget risus. Phasellus ultrices facilisis purus, sit amet tempus odio congue non. Donec nisi orci, ullamcorper sit amet purus sit amet, vulputate convallis augue.
+              É muito simples, basta entrar na nossa página de reservas e
+              procurar pelo imóvel mais interessante para você. Nossas ferramentas
+              dão todo o suporte necessário para facilitar sua escolha.
+              <div class="ad_sticker_container">
+                <img src="images/sticker-green.png" class="ad_sticker">
+                <span class="ad_sticker_text"><i class="far fa-thumbs-up"></i></span>
+              </div>
             </div>
             <div class="ad_card_link">
-              <a href="#" class="button_link indigo_bt">CLICK AQUI</a>
+              <a href="products.html" class="button_link mid_red_br">CLICK AQUI</a>
             </div>
           </div>
         </div>
         <div class="generic_content material_mid_red_bt" id="ad_card_external">
-          <div class="ad_card_container dark_red_bt">
+          <div class="ad_card_container white_bt">
             <div class="ad_card_text">
-              <span class="ad_card_text_title">Título {CARTÃO AD}</span>
+              <span class="ad_card_text_title">Tenho um imóvel para anunciar!</span>
               <hr>
-              Aliquam erat volutpat. Proin quis odio blandit, sollicitudin dui quis, viverra nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed facilisis mi efficitur vulputate ultricies. Ut convallis ipsum eu dapibus bibendum. Vivamus ipsum lectus, varius ac elementum et, egestas sed mi. Sed in mollis ligula. Sed sapien neque, tempus quis blandit ac, sodales vitae urna. Cras dolor nibh, imperdiet nec venenatis in, sollicitudin eget risus. Phasellus ultrices facilisis purus, sit amet tempus odio congue non. Donec nisi orci, ullamcorper sit amet purus sit amet, vulputate convallis augue.
+              Beleza! Nossas ferramentas vão garantir que seu anúncio chegue ao
+              maior número de clientes e que o negócio funcione bem para ambas
+              as partes.
+              <div class="ad_sticker_container">
+                <img src="images/sticker-blue.png" class="ad_sticker">
+                <span class="ad_sticker_text"><i class="far fa-smile-wink"></i></span>
+              </div>
             </div>
             <div class="ad_card_link">
-              <a href="#" class="button_link indigo_bt">CLICK AQUI</a>
+              <a href="products.html" class="button_link vivid_green_bt">CLICK AQUI</a>
             </div>
           </div>
         </div>
@@ -89,10 +124,10 @@
       <footer class="site_footer light_grey_bt">
         <div class="footer_elements">
           <ul class="footer_menu">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">RESERVA</a></li>
-            <li><a href="#">CONTATO</a></li>
-            <li><a href="#">SOBRE</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html">RESERVA</a></li>
+            <li><a href="controlpanel.php">PAINEL</a></li>
+            <li><a href="about.html">SOBRE</a></li>
           </ul>
           <span class="footer_credits">TemVagaAí? (2020) - Victor Hugo Faria (5962) - Images by unsplash.com</span>
         </div>

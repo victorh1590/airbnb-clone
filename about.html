@@ -1,0 +1,201 @@
+<!-- Author: Victor H F (5962) - 2020 -->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <meta charset="UTF-8">
+  <meta title="Tem Vaga Aí?">
+  <meta name="description" content="Painel de Controle">
+  <meta name="author" content="Victor H F (5962)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/50216e6b20.js" crossorigin="Secure"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/panel_page.js"></script>
+</head>
+<body class="mid_black_bt" id="cadastro" style='font-family: monospace, Roboto, sans-serif;'>
+  <header>
+    <div class="header_logo" id="visible_cont_1">
+      <div class="logo" id="visible_element_1">
+        Tem<span class="vaga">Vaga</span>Aí<span class="vaga">?</span>
+      </div>
+      <div class="palette_button_container">
+       <button type='button' class="palette_button" id="palette_button" onclick="changePaletteButton();"><i class="fas fa-lightbulb"></i></button>
+      </div>
+      <div class="menu_button_container" >
+        <button type="button" class="menu_button" id="visible_element_3"><i class="fas fa-times"></i></button>
+      </div>
+      <nav class="menu_container">
+        <ul class="menu_side">
+          <li class="menu_item"><div class="menu_logo">Menu</div></li>
+          <li class="menu_item"><a href="index.html"><div><i class="fas fa-home"></i></div>Home</a></li>
+          <li class="menu_item"><a href="products.html"><div><i class="fas fa-paper-plane"></i></div>Reserva</a></li>
+          <li class="menu_item"><a href="cadastro.php"><div><i class="fas fa-plus-circle"></i></div>Cadastrar</a></li>
+          <li class="menu_item"><a href="controlpanel.php" class="active_menu"><div><i class="fas fa-list-alt"></i></div>Gerenciar</a></li>
+          <li class="menu_item"><a href="about.html"><div><i class="fas fa-info-circle"></i></div>Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="main_container">
+    <div class="main_container panel_main_container" id='checkin_ext_container'>   
+      <div class="text_content" id="text_top1" style='margin-top: 30px !important; line-height: 25px;'>
+        <span class="text_content_main_title" style='text-align: center;'>Sobre o 'Tem Vaga Aí'?</span>
+        <hr>
+        <div class="text_content_author_date">
+          <span class="author_">Autor: <span id="author_post">VICTOR HUGO FARIA - 5962 - INTEGRAL - T1</span></span>
+          <span class="date_">Data: <span id="date_post"> 06/12/2020</span></span>
+        </div>
+        <br>
+        <span style='font-size: 1rem; text-align: justify;'>
+        <b>VICTOR HUGO FARIA - 5962 - INTEGRAL - T1</b>
+        <hr>
+        <b>Requisitos do Sistema.</b><br><hr>
+        Para instalar o sistema é necessário a utilização do stack LAMPP ou XAMPP.<br>
+        Foram utilizados no desenvolvimento do sistema as seguintes ferramentas:<br>
+        ->PHP 7.2.24-0ubuntu0.18.04.7 - Zend Engine v3.2.0<br>
+        ->MYSQL Ver 14.14 Distrib 5.7.32, for Linux (x86_64) using  EditLine wrapper<br>
+        ->APACHE 2 Server version: Apache/2.4.29 (Ubuntu)<br>
+        ->phpmyadmin<br>
+        ->Opcional: DBeaver, MYSQL Workbench<br><br>
+        <b>Configurando o sistema.</b><br><hr>
+        Após a instalação do XAMPP ou LAMPP stack é necessário configurar o Apache2 redirecionando-o para a pasta do projeto.
+        No caso do LAMPP stack essa pasta se encontra em /var/www. No caso do XAMPP é provavelmente a pasta htdocs em /opt/lampp/.<br>
+        Caso a simples transferência da pasta para o local não retorne a página em https://localhost/index.html, o seguinte procedimento
+        deve ser seguido:<br>
+        <br><b>https://docs.joomla.org/Configuring_a_LAMPP_server_for_PHP_development/Linux_desktop</b><br><br>
+        No link acima, as partes: Enabling mod_rewrite, Creating the New Site <b>substituindo caminhos da configuração pelo caminho da pasta do projeto</b>, 
+        e os 3 comandos:<br><br>
+        sudo a2ensite mydevsite<br>
+        sudo a2dissite 000-default<br>
+        sudo service apache2 restart<br><br>
+        Depois garantir que a pasta do projeto contém as seguintes permissões: Access-> Read&Write para o dono, grupo e outros. As mesmas permissões devem também estar
+        ativadas na pasta images_product, ou o sistema não permitira escrita de novas imagens na pasta.<br>
+        Em caso de dúvida o seguinte comando pode ser utilizado: <br><br>
+        sudo chmod 777 {caminho/da/pasta (ex: /home/clausius/4)} -- Recomendo checar a sintaxe do comando com cuidado, pois o comando chmod pode causar danos sérios ao sistema.<br><br>
+        Em seguida configuraremos o banco de dados. Se os passos acima foram seguidos corretamente, você deve ter agora acesso à pasta do projeto pela url <b>https://localhost/index.html</b>.
+        Precisamos rodar a query de criação do banco <b>temvaga_db</b> contida no arquivo <b>temvaga_db.sql na pasta sql</b>. A query pode ser rodada pelo <b>https://localhost/myphpadmin</b>,
+        pelo MYSQL Workbench, pelo DBeaver ou pela interface mysql no terminal. Atenção aos dados do usuário root do sistema (id e senha).<br><br>
+        Em seguida rodar a query contida em <b>imoveis.sql</b> dentro do banco temvaga_db para criar a tabela única imoveis. Após ser criada a tabela, pode ser feita uma consulta como <b><i>SELECT * FROM imoveis;</i></b> ou verificação pelo
+        phpmyadmin para checar se os campos com entradas que contém acentos (como 'São Paulo') foram criados corretamente. Caso não, significa que a query não criou o banco com o charset UTF-8, e neste caso deletaremos
+        a tabela imóveis e a criaremos novamente usando a query contida no arquivo <b>temvaga_db.sql</b>, que está comentada, rodando também o imoveis.sql em seguida para inserção dos dados.<br><br>
+        Encerrada a configuração do banco, precisamos configurar as permissões para o PHP. Para isso, se dirigir para a <b>pasta php</b>, abrir o arquivo <b>db_connection.php</b> e editar as 3
+        variáveis contidas nele com base na sua máquina:
+        <pre>
+          $servername = "localhost"; //Local ou IP do servidor.
+          $username = "root"; //Username do admnistrador do BD.
+          $password = "@DMin123"; //Senha do admnistrador do BD.
+        </pre>
+        E está terminada a configuração. A página inicial do site é: http://(localhost ou ip)(:porta?)/index.html;
+        <br>
+        <b>Estrutura de pastas.</b><br><hr>
+        <pre>
+        css -> contém o único .css do projeto.
+        
+        images -> contém imagens de exemplo e elementos do site.
+        
+        images_product -> 
+          contém as imagens do anúncios registrados no banco de dados. 
+          <b>NÃO ALTERAR OS ARQUIVOS AQUI MANUALMENTE, APENAS PELO SISTEMA.</b> 
+        
+        js -> 
+          contém o script principal script.js e outros scripts especiais para 
+          determinadas páginas.
+       
+        logs -> não necessária, só um lugar para o apache2 salvar alguns logs de erro.
+        
+        php -> todos os scripts php (server-side) do site.
+       
+        sql -> querys para configuração do banco do sistema (que já fizemos).
+        </pre>
+        <b>Arquivos na pasta principal do projeto.</b>
+        <pre>
+          about.html -> Esta página Sobre.
+          
+          cadastro.php -> Página de cadastro de anúncios.
+          
+          checkin.html -> 
+            Página específica de um anúncio. 
+            Inacessível sem os parâmetros GET na URL.
+          
+          controlpanel.php -> 
+            Painel de Controle para edição/remoção de registros (anúncios) 
+            no banco de dados.
+         
+          editar.php -> Página de edição de anúncios.
+          index.html -> Landing Page do site (HOME).
+          products.html -> Página de anúncios/busca de anúncios.
+          
+          signup_system.php -> 
+            Apenas um middleware de validação de sessão para selecionar 
+            edição ou cadastro, deve ser inacessível ao usuário comum.
+          
+          web_gui_kit.html -> WEB GUI KIT do site, nossa identidade visual.
+          
+          README.txt -> apenas uma repetição desta página.
+        </pre>
+        <b>Onde encontrar os requisitos do trabalho 2?</b><br><hr>
+        <pre>
+          Validação Javascript -> Metade final do js/script.js
+          
+          Preenchimento com Javascript -> 
+            Cards na página products.html, 
+            trapézio vermelho no banner das páginas index.html e products.html, 
+            dados nos formulários da página editar.php (acessível através de controlpanel.php, clikando no lápis verde), 
+            informações em todas as páginas checkin.html (acessível pela página products.html, clickando em 'visualizar' de algum anúncio), 
+            a tabela de registros em controlpanel.php.
+         
+            Troca de Palheta -> 
+              Qualquer página, exceto o web_gui_kit.html, clikando na lâmpada na header.
+        </pre>
+        <b>Onde encontrar os requisitos do trabalho 3?</b><br><hr>
+        <pre>
+          Tela de cadastro (inclusão) -> cadastro.php (https://localhost/cadastro.php)
+          
+          Remoção de Registros -> 
+            No Painel de Controle, 
+            controlpanel.html clikando no X vermelho de algum registro. 
+            (https://localhost/controlpanel.php)
+
+          Edição de Registros -> 
+            No Painel de Controle, 
+            controlpanel.html clikando no lápis verde de algum registro. 
+            (https://localhost/controlpanel.php)
+
+          Realização de consultas com um ou mais critérios -> 
+            Página products.html (https://localhost/products.html)
+            Aceita buscas por 'código': númerico.
+            Cidade: String sem números.
+            Categoria: String (valores pré-definidos que podem ser verificados em cadastro.php).
+            Diversos filtros contidos na página. Interagem com o resultado das buscas.
+            Para limpar a busca: deixe o campo em branco e aperte enter;
+        </pre>
+        <b>ATENÇÃO: EM CASO DE QUALQUER PROBLEMA NAS PÁGINAS, TENTE DAR REFRESH COM SHIFT + F5 PARA LIMPAR O CACHE.</b><br>
+        <b>ATENÇÃO: CASO ALGUM SCRIPT PHP DÊ PROBLEMA, DESCOMENTE O CÓDIGO COM AS VARIÁVEIS $username e $password e mude para as corretas.</b><br>
+        <b>ATENÇÃO: O ARQUIVO ZIPADO image_products PODE SER USADO PARA RECUPERAR A PASTA image_products APÓS DELETAR REGISTROS.</b><br>
+        <hr>
+        </span>
+        <hr>
+        <div class="text_content_bottom_row">
+          <span class="text_content_return_top">
+            <a href="#text_top1" id="return_top">Voltar para início.</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <footer class="site_footer light_grey_bt">
+      <div class="footer_elements">
+        <ul class="footer_menu">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="products.html">RESERVA</a></li>
+          <li><a href="controlpanel.php">PAINEL</a></li>
+          <li><a href="about.html">SOBRE</a></li>
+        </ul>
+        <span class="footer_credits">TemVagaAí? (2020) - Victor Hugo Faria (5962) - Images by unsplash.com</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html> 

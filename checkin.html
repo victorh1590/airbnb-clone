@@ -1,7 +1,10 @@
-<!-- Author: Victor H F - 2020 -->
+<!-- Author: Victor H F (5962) - 2020 -->
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
   <meta charset="UTF-8">
   <meta name="description" content="Card Slide In when scroll down.">
   <meta name="author" content="Victor H F (cd9k)">
@@ -10,47 +13,56 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
+  <script src="js/checkin_page.js"></script>
   <script src="https://kit.fontawesome.com/50216e6b20.js" crossorigin="Secure"></script>
 </head>
-<body class="mid_black_bt">
+<body class="mid_black_bt" id="checkin_page">
   <header>
-    <div class="header_logo">
-      <div class="logo">
+    <div class="header_logo" id="visible_cont_1">
+      <div class="logo" id="visible_element_1">
         Tem<span class="vaga">Vaga</span>Aí<span class="vaga">?</span>
       </div>
-      <div class="menu_button_container">
-        <button type="button" class="menu_button"><i class="fas fa-times"></i></button>
+      <div class="palette_button_container">
+       <button type='button' class="palette_button" id="palette_button" onclick="changePaletteButton();"><i class="fas fa-lightbulb"></i></button>
+      </div>
+      <div class="menu_button_container" >
+        <button type="button" class="menu_button" id="visible_element_3"><i class="fas fa-times"></i></button>
       </div>
       <nav class="menu_container">
         <ul class="menu_side">
           <li class="menu_item"><div class="menu_logo">Menu</div></li>
-          <li class="menu_item"><a href="#" class="active_menu"><div><i class="fas fa-home"></i></div>Home</a></li>
-          <li class="menu_item"><a href="#"><div><i class="fas fa-paper-plane"></i></div>Reserva</a></li>
-          <li class="menu_item"><a href="#"><div><i class="fas fa-envelope"></i></div>Contato</a></li>
-          <li class="menu_item"><a href="#"><div><i class="fas fa-info-circle"></i></div>Sobre</a></li>
+          <li class="menu_item"><a href="index.html" class="active_menu"><div><i class="fas fa-home"></i></div>Home</a></li>
+          <li class="menu_item"><a href="products.html"><div><i class="fas fa-paper-plane"></i></div>Reserva</a></li>
+          <li class="menu_item"><a href="cadastro.php"><div><i class="fas fa-plus-circle"></i></div>Cadastrar</a></li>
+          <li class="menu_item"><a href="controlpanel.php"><div><i class="fas fa-list-alt"></i></div>Gerenciar</a></li>
+          <li class="menu_item"><a href="about.html"><div><i class="fas fa-info-circle"></i></div>Sobre</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <div class="main_container white_bt">
-    <div class="main_container white_bt" style="max-width: 1100px; margin: 0 auto;">
-      <div class="text_content" id="checkin_instance">
+  <div class="main_container white_bt" id="visible_cont_2">
+    <div class="main_container index_container" id='checkin_ext_container'>
+      <div class="text_content" id="checkin_instance" style='max-width: 1100px; margin-left: auto !important; margin-right: auto !important; box-shadow: none !important; border: none !important;'>
         <div class="card_container_label">
-          Apartamento em Belo Horizonte.
+          <span id="checkin_title">
+            <!-- Apartamento em Belo Horizonte. -->
+          </span>
           <div class="card_container_sublabel">
-            Belo Horizonte, Minas Gerais, Brazil <i class="fas fa-map-marker-alt"></i> 
+            <span id="checkin_location">
+              <!-- Belo Horizonte, Minas Gerais, Brazil  -->
+            </span><i class="fas fa-map-marker-alt"></i> 
             <span class="text_content_socialmedia">Share: 
-              <a href="#">
+              <a href="https://facebook.com" target="_blank">
                 <i class="fab fa-facebook-square"></i>
               </a>
-              <a href="#">
+              <a href="https://whatsapp.com" target="_blank">
                 <i class="fab fa-whatsapp-square"></i>
               </a>
-              <a href="#">
+              <a href="https://twitter.com" target="_blank">
                 <i class="fab fa-twitter-square"></i>
               </a>
-              <a href="#">
+              <a href="https://instagram.com" target="_blank">
                 <i class="fab fa-instagram-square"></i>
               </a>
             </span>
@@ -71,11 +83,6 @@
         <hr>
         <div class="text_content" id="checkin_description_box">
           <span class="checkin_description_title">Descrição do imóvel</span>
-          <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a turpis pellentesque, consectetur nulla non, volutpat libero. Fusce auctor lectus et felis gravida convallis. Quisque a lacinia mauris, at porta mauris. Nulla ut magna sed nunc maximus venenatis. Mauris efficitur massa enim, sit amet viverra ipsum viverra a. Nam id massa ante. Aenean a cursus dolor. Proin venenatis leo at leo euismod ullamcorper. Donec eu lorem enim. Fusce elementum arcu odio, eu pretium risus pellentesque et. Mauris eu magna lorem. Integer quis bibendum diam. Suspendisse nisl enim, pellentesque sed congue eget, eleifend et leo. Aliquam tristique felis lorem, ut congue nibh tristique vel.
-          Aliquam erat volutpat. Proin quis odio blandit, sollicitudin dui quis, viverra nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed facilisis mi efficitur vulputate ultricies. Ut convallis ipsum eu dapibus bibendum. Vivamus ipsum lectus, varius ac elementum et, egestas sed mi. Sed in mollis ligula. Sed sapien neque, tempus quis blandit ac, sodales vitae urna. Cras dolor nibh, imperdiet nec venenatis in, sollicitudin eget risus. Phasellus ultrices facilisis purus, sit amet tempus odio congue non. Donec nisi orci, ullamcorper sit amet purus sit amet, vulputate convallis augue.
-          Duis sit amet dictum lacus. Suspendisse potenti. Etiam ut lectus quis ipsum imperdiet dapibus. Phasellus consectetur tellus in tellus sodales, ut viverra velit congue. Nullam rhoncus venenatis sapien id euismod. Cras dui metus, vulputate dapibus eros sed, finibus fringilla metus. Cras dictum eleifend erat, ac accumsan ipsum egestas id. Ut pretium elit a justo vehicula, sed vehicula sem ullamcorper.
-          Phasellus mattis velit et ex iaculis venenatis. Sed eleifend vehicula augue a pretium. Vivamus in dapibus orci, vitae dapibus dolor. Nunc facilisis velit non tristique dapibus. Ut est orci, placerat vel nisi quis, euismod porta justo. Ut sed ornare purus. Aenean porta ante ut justo molestie, quis lacinia metus consequat. Proin placerat in sapien et eleifend. Duis fringilla turpis elit, vitae hendrerit odio sollicitudin sit amet. Etiam at nisl et augue fermentum elementum. Aliquam porttitor nisl at luctus dictum.
-          Duis vel lobortis nunc. Nam posuere elit vel diam semper, ut vehicula quam ultrices. Vivamus condimentum nunc at rutrum efficitur. Curabitur laoreet quam lacinia, tincidunt lacus in, bibendum purus. Nunc turpis nunc, maximus eget luctus in, porttitor in nunc. Maecenas cursus velit eget risus suscipit mollis. Etiam vel felis at ligula ullamcorper laoreet. In libero est, sagittis at malesuada vitae, viverra quis metus. Donec sit amet euismod lorem. Morbi pharetra maximus velit in porttitor. Integer vehicula nisl nisi, nec aliquam nibh molestie bibendum. Morbi et placerat erat, eu eleifend ipsum. Nullam posuere erat quis elit scelerisque sagittis id accumsan lorem. Nam nec ultrices ligula. Vestibulum in ipsum vel eros pharetra varius. Vivamus elementum, lorem sit amet convallis pellentesque, urna velit accumsan mauris, et semper odio nulla nec dolor. -->
           <br>  
           <div class="checkin_description_topics">
             <div class="checkin_description_topics_item">
@@ -117,20 +124,22 @@
               </div>
             </div>
           </div>
-          <div class="text_content px16_font" id="checkin_description">
+          <div class="text_content px16_font" id="checkin_description" style="margin-top: 0 !important;">
             <ul class="checkin_description_rooms">
               <span class="bold_text">Cômodos:</span>
-              <li>2 Quarto(s)</li>
-              <li>1 Banheiro(s)</li>
-              <li>1 Sala(s) de Estar</li>
-              <li>1 Cozinha(s)</li>
-              <li>1 Sacada(s)</li>
-              <li>1 Área(s) de Serviço</li>
+              <li>X Quarto(s)</li>
+              <li>X Banheiro(s)</li>
+              <li>X Sala(s) de Estar</li>
+              <li>X Cozinha(s)</li>
+              <li>X Sacada(s)</li>
+              <li>X Área(s) de Serviço</li>
             </ul>
             <hr>
             <span class="bold_text">[Descrição dada pelo usuário]<br></span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a turpis pellentesque, consectetur nulla non, volutpat libero. Fusce auctor lectus et felis gravida convallis. Quisque a lacinia mauris, at porta mauris. Nulla ut magna sed nunc maximus venenatis. Mauris efficitur massa enim, sit amet viverra ipsum viverra a. Nam id massa ante. Aenean a cursus dolor. Proin venenatis leo at leo euismod ullamcorper. Donec eu lorem enim. Fusce elementum arcu odio, eu pretium risus pellentesque et. Mauris eu magna lorem. Integer quis bibendum diam. Suspendisse nisl enim, pellentesque sed congue eget, eleifend et leo. Aliquam tristique felis lorem, ut congue nibh tristique vel.
-            Aliquam erat volutpat. Proin quis odio blandit, sollicitudin dui quis, viverra nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed facilisis mi efficitur vulputate ultricies. Ut convallis ipsum eu dapibus bibendum. Vivamus ipsum lectus, varius ac elementum et, egestas sed mi. Sed in mollis ligula. Sed sapien neque, tempus quis blandit ac, sodales vitae urna. Cras dolor nibh, imperdiet nec venenatis in, sollicitudin eget risus. Phasellus ultrices facilisis purus, sit amet tempus odio congue non. Donec nisi orci, ullamcorper sit amet purus sit amet, vulputate convallis augue.
+            <span id="checkin_descripion">
+            <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a turpis pellentesque, consectetur nulla non, volutpat libero. Fusce auctor lectus et felis gravida convallis. Quisque a lacinia mauris, at porta mauris. Nulla ut magna sed nunc maximus venenatis. Mauris efficitur massa enim, sit amet viverra ipsum viverra a. Nam id massa ante. Aenean a cursus dolor. Proin venenatis leo at leo euismod ullamcorper. Donec eu lorem enim. Fusce elementum arcu odio, eu pretium risus pellentesque et. Mauris eu magna lorem. Integer quis bibendum diam. Suspendisse nisl enim, pellentesque sed congue eget, eleifend et leo. Aliquam tristique felis lorem, ut congue nibh tristique vel.
+            Aliquam erat volutpat. Proin quis odio blandit, sollicitudin dui quis, viverra nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed facilisis mi efficitur vulputate ultricies. Ut convallis ipsum eu dapibus bibendum. Vivamus ipsum lectus, varius ac elementum et, egestas sed mi. Sed in mollis ligula. Sed sapien neque, tempus quis blandit ac, sodales vitae urna. Cras dolor nibh, imperdiet nec venenatis in, sollicitudin eget risus. Phasellus ultrices facilisis purus, sit amet tempus odio congue non. Donec nisi orci, ullamcorper sit amet purus sit amet, vulputate convallis augue. -->
+            </span>
           </div>
           <form class="form_content" id="checkin_form_container" action="https://www.w3schools.com/action_page.php">
             <span class="checkin_description_title" id="checkin_form_title">Faça sua reserva<br></span>
@@ -140,12 +149,14 @@
               <input type="date" id="checkin_date" name="checkin_date">
               </div>
               <div class=checkin_calendar_item>
-              <label for="checkin_date">Data do Check-out<br></label>
-              <input type="date" id="checkin_date" name="checkin_date">
+              <label for="checkout_date">Data do Check-out<br></label>
+              <input type="date" id="checkout_date" name="checkout_date" disabled>
               </div>
             </div>
             <br>
-            <span class="card_text_prize">R$199,00<span>/Noite</span></span>
+            <span class="card_text_prize" id="checkin_price">
+              <!-- R$199,00 -->
+              <span>/Noite</span></span>
             <a href='#' onclick='this.parentNode.submit(); return false;' class="button_link indigo_bt" id="checkin_submit">RESERVAR</a>
           </form>
         </div>
@@ -154,10 +165,10 @@
     <footer class="site_footer light_grey_bt" style="max-width: 1920px; margin-left: auto; margin-right: auto;">
       <div class="footer_elements">
         <ul class="footer_menu">
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">RESERVA</a></li>
-          <li><a href="#">CONTATO</a></li>
-          <li><a href="#">SOBRE</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="products.html">RESERVA</a></li>
+          <li><a href="controlpanel.php">PAINEL</a></li>
+          <li><a href="about.html">SOBRE</a></li>
         </ul>
         <span class="footer_credits">TemVagaAí? (2020) - Victor Hugo Faria (5962) - Images by unsplash.com</span>
       </div>

@@ -24,7 +24,7 @@ header {
   position: sticky;
   z-index: 10;
   background-color: #FFFFFF;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -41,12 +41,11 @@ footer {
 }
 
 .logo {
-  width: 50%;
+  width: auto;
   display: inline-block;
   font-size: 1.25rem;
   text-align: left;
   background-color: rgba(0,0,0,0);
-  /* color: #212121; */
   color: #484848;
   line-height: 50px;
   padding-left: 5px;
@@ -76,6 +75,20 @@ footer {
   margin: 0;
   padding: 5% 3%;
   font-size: 0.625rem;
+}
+
+.index_container {
+  max-width: 1920px !important; 
+  margin: 0 auto !important;
+  background-color: #FFFFFF;
+}
+
+.panel_main_container {
+  text-align: center !important; 
+  min-height: 80vh !important; 
+  width: 100% !important; 
+  margin: 0 auto !important;
+  background-color: #f44336;
 }
 
 .row {
@@ -110,6 +123,138 @@ footer {
   font-size: 0.875rem;
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+/* Search Form */
+.search_form {
+  margin: auto 3% 20px 3%;
+  width: 80% !important;
+  height: auto;
+  background-color: #ffffff;
+  text-align: justify;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin-bottom: 20px !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  flex-flow: row nowrap !important;
+}
+
+.search_box {
+  padding: 10px !important; 
+  margin: 0 !important; 
+  height: 50px; 
+  width: 95%;  
+  font-size: 1.125rem;
+  font-family: Cabin;
+  color: #212121 !important;
+  border-radius: 8px 0 0 8px !important; 
+  border: 1px solid #BDBDBD
+}
+
+.search_button {
+  margin: 0 auto !important;
+  border-radius: 0 8px 8px 0 !important;
+  border: 1px solid #BDBDBD;
+  width: 5% !important;
+  height: 50px !important;
+}
+
+#filter_box {
+  width: 15% !important;
+  border: 1px solid #BDBDBD;
+}
+
+.search_filter {
+  border: none;
+  /* border-radius: 8px 0 0 8px !important;  */
+  border-radius: 8px;
+  font-size: 0.875rem;
+  width: 100% !important;
+  padding: 10px !important; 
+  margin: 0 !important; 
+  height: 50px;
+  /* text-align-last: center !important; */
+}
+
+#filter_submit {
+  width: 40% !important;
+  height: 50px !important;
+  margin: 0 auto !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+/* Table */
+.table_content {
+  width: auto;
+  height: auto;
+  /* padding: 32px; */
+  margin: 30px auto 30px auto;
+  background-color: #ffffff;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+
+  max-width: 1920px;
+  width: 90%;
+  overflow: auto;
+}
+
+.table_title {
+  border-radius: 8px; 
+  height: 50px; 
+  max-width: 450px;
+  min-width: 280px;
+  padding: 0 !important; 
+  margin: 30px auto!important;
+  color: #FFFFFF;
+  border: 1px solid #BDBDBD;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+.table_first_row {
+  /* background-color: #283593; */
+  color: #f1f1f1;
+}
+
+#table_entries {
+  width: 100%;
+  margin: 0 auto;
+}
+
+th, td{
+  padding: 10px;
+  width: auto;
+}
+
+table, th, td {
+  border: 1px solid #BDBDBD;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  text-align: center !important;
+}
+
+.table_option {
+  text-align: center !important;
+  font-size: 1.5rem;
+}
+
+.table_option a .fa-pencil-alt {
+  color: #1faa00;
+}
+
+.table_option a .fa-times {
+  color:  #ba000d;
 }
 
 /*Text Content*/
@@ -318,10 +463,6 @@ i.fa-instagram-square {
   color: #212121;
 }
 
-/* option:not(:disabled) {
-  color: black;
-} */
-
 /*Checkbox*/
 .checkbox_container {
   font-size: 1.125rem;
@@ -426,17 +567,16 @@ i.fa-instagram-square {
   justify-content: center;
   align-content: center;
   align-items: center;
-  /* width: auto; */
+  
   width: 100%;
   max-width: 1920px;
   height: 100%;
-  /* border-radius: 8px; */
+  
   margin-left: auto;
   margin-right: auto;
-  /* margin: 10% auto; */
-  /* background-color: #FFFFFF; */
-  background-color: #f1f1f1;
   padding: 0 30px;
+  
+  background-color: #f1f1f1;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   user-select: none;
 }
@@ -453,31 +593,16 @@ i.fa-instagram-square {
   display: flex;
   flex-flow: row wrap;
   padding: 0 10px 10px 10px;
-  /* flex-flow: column wrap; */
   justify-content: space-evenly;
   align-items: space-evenly;
-  /* align-content: flex-start; */
-  /* margin: 5% 1.5% 0 1.5%; */
 }
-
-/* .card_row .card_content:first-child {
-  margin-left: 3%;
-} */
-/* 
-.card_row:not(:first-child) {
-  margin-top: 0px;
-} */
 
 .card_content {
   box-sizing: border-box;
   min-width: 350px;
   flex-basis: 30%;
-  /* width: auto; */
-  /* max-width: 100%; */
   max-width: 400px;
   background-color: #ffffff;
-  /* margin: auto 3% 5% 0; */
-  /* margin: 25px 20px; */
   margin: 20px 10px;
   height: auto;
   border-radius: 8px;
@@ -486,10 +611,6 @@ i.fa-instagram-square {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
-  /* padding: 2px 1px; */
-  /* border: 2px solid #BDBDBD; */
-  /* border: 3px solid black; */
-  /* border: 1px solid #BDBDBD; */
   overflow: hidden;
   transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -516,12 +637,7 @@ i.fa-instagram-square {
   height: auto;
   max-height: 65%;
   overflow: hidden;
-  /* background-color: #ffffff; */
-  /* border-top-left-radius: 4px;
-  border-top-right-radius: 4px; */
   object-fit: contain;
-  /* border-bottom: 1px solid black; */
-  /* border-radius: 8px; */
 }
 
 .card_image img {
@@ -533,7 +649,6 @@ i.fa-instagram-square {
 
 .card_text {
   width: 100%;
-  /* height: auto; */
   min-height: 60px;
   background-color: #ffffff;
   font-size: 1.125rem;
@@ -545,7 +660,6 @@ i.fa-instagram-square {
   align-items: center;
   align-content: center;
   margin: auto;
-  /* padding: 10px 0 10px 0; */
 }
 
 .card_text_content {
@@ -565,32 +679,23 @@ i.fa-instagram-square {
 }
 
 .card_button {
-  /* margin-top: auto; */
   margin-bottom: 0;
   width: 100%;
   height: auto;
   position: relative;
   bottom: -2px;
   left: 0;
-  /* min-height: 60px; */
   align-self: flex-end;
-  /* background-color: #BDBDBD; */
   background-color: #FFFFFF;
-  /* border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px; */
   display: flex;
-  /* border-top: 2px solid #BDBDBD; */
-  /* border-bottom: 1px solid #BDBDBD; */
   overflow: hidden;
 }
 
 .card_button_link {
-  /* width: 33.333%; */
   max-width: 100%;
   width: 100%;
   max-height: 100px;
   border: none;
-  /* background-color: #F44336; */
   padding: 20px 0;
   font-size: 0.875rem;
   color: #ffffff;
@@ -607,14 +712,6 @@ i.fa-instagram-square {
 .card_button .card_button_link:not(:last-child) {
   border-right: 1px double #BDBDBD;
 }
-
-/* .card_button .card_button_link:first-child {
-  border-bottom-left-radius: 4px;
-}
-
-.card_button .card_button_link:last-child{
-  border-bottom-right-radius: 4px;
-} */
 
 .card_button_link:hover.material_mid_red_bt {
   background-color: #D32F2F;
@@ -654,7 +751,9 @@ i.fa-instagram-square {
   width: 100%;
   max-height: 600px;
   font-size: 0.875rem;
-  color: #ffffff;
+  color: #212121;
+  border: 5px double #484848;
+  border-radius: 8px;
   background-color: rgba(0,0,0,0);
   padding: 32px;
   overflow: hidden;
@@ -664,6 +763,45 @@ i.fa-instagram-square {
   text-align: center;
   display: block;
   font-size: 1.5rem;
+}
+
+.ad_sticker_container {
+  display: block;
+
+  width: 202px;
+  height: 202px;
+  
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 101px;
+
+  position: relative;
+}
+
+.ad_sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  animation: sticker_animation 60s linear infinite;
+}
+
+.ad_sticker_text {
+  position: absolute;
+  width: 202px;
+  z-index: 2;
+
+  text-align: center;
+  line-height: 202px;
+  font-size: 3rem;
+  color: #FFFFFF;
+}
+
+@keyframes sticker_animation {
+  100% {transform: rotate(1turn);}
 }
 
 .ad_card_link {
@@ -705,7 +843,7 @@ i.fa-instagram-square {
   background-repeat: no-repeat;
   background-size: cover;
 
-  transition: all 1s linear 0.5s;
+  transition: all 1s ease 0.5s;
 }
 
 
@@ -843,14 +981,12 @@ i.fa-instagram-square {
 .footer_credits {
   font-size: 0.75rem;
   font-weight: normal;
-  /* padding: 20px 0; */
 }
 
 /* Menu */
 .menu_item a, .menu_logo {
   text-decoration: none;
-  font-family: Cabin;
-  /* font-family: Roboto, 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif */
+  font-family: Cabin, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .menu_container {
@@ -886,12 +1022,40 @@ i.fa-instagram-square {
   transition: transform 150ms linear, color 25ms ease-in;
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0);
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5625rem;
+  border: none;
+}
+
+.palette_button {
+  z-index: 10;
+  transition: transform 150ms linear, color 25ms ease-in;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
   color: #484848;
   padding: 0;
   width: 30px;
   height: 30px;
   font-size: 1.5625rem;
   border: none;
+}
+
+.palette_button_container {
+  position: absolute;
+  top: 10px;
+  right: 90px;
+  z-index: 15;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: transparent;
+  transition: "background-color" 150ms linear;
+}
+
+.palette_button_container:hover {
+  opacity: 0.6;
 }
 
 .menu_button_container {
@@ -905,6 +1069,10 @@ i.fa-instagram-square {
   background-color: transparent;
   transition: "background-color" 150ms linear;
 }
+
+/* .menu_button_container:hover {
+  opacity: 0.6;
+} */
 
 .menu_item {
   width: 100%;
@@ -926,11 +1094,10 @@ i.fa-instagram-square {
 }
 
 .menu_item a {
-  font-family: Cabin;
+  font-family: Cabin, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: block;
   height: 50px;
   line-height: 50px;
-  /* color: #212121; */
   color: #484848;
   font-size: 1rem;
   text-align: left;
@@ -1006,28 +1173,6 @@ i.fa-instagram-square {
   margin: 0 !important;
   padding: 10px;
   overflow: hidden;
-  /* padding: 50px 100px !important; */
-  /* max-width: 2500px !important; */
-}
-
-.scrollable_image_div {
-  min-width: 1000px;
-  /* overflow: hidden; */
-}
-
-.product_image_row {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  min-width: 1000px;
-  /* overflow: scroll; */
-}
-
-.product_image_row .card_image_frame {
-  margin: 10px !important;
-  justify-content: space-evenly !important;
 }
 
 .checkin_description_title {
@@ -1126,7 +1271,6 @@ i.fa-instagram-square {
 }
 
 .checkin_description_rooms {
-  /* list-style-type: none; */
   font-size: 1.125rem;
   padding: 0 10px 10px 10px;
   margin: 0;
@@ -1144,6 +1288,7 @@ i.fa-instagram-square {
   border: 1px solid #BDBDBD;
   border-radius: 8px;
   width: auto;
+  max-width: 300px;
   height: auto;
   margin: 10px auto 50px auto !important;
   display: block;
@@ -1162,12 +1307,10 @@ i.fa-instagram-square {
   align-items: flex-start;
   align-content: stretch;
   height: auto;
-  /* padding-left: 5%; */
 }
 
 .checkin_calendar_item {
   width: 50%;
-  /* margin: auto; */
   display: inline-block;
   box-sizing: border-box;
 }
@@ -1185,8 +1328,6 @@ i.fa-instagram-square {
   position: fixed;
   top: 20%;
   width: 50%;
-  /* margin-left: 10%;
-  margin-right: 10%; */
   height: auto;
   background-color: lightgreen;
   border: 1px solid black;
@@ -1196,11 +1337,10 @@ i.fa-instagram-square {
   font-size: 10px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
-  /* line-height: 20vh; */
 }
 
 .already_shown .card_image {
-  background-color: blue;
+  background-color: #BDBDBD;
 }
 
 .come-in {
@@ -1370,10 +1510,8 @@ i.fa-instagram-square {
 .gradient_background_red_lightred_white {
   background-image: linear-gradient(
     to bottom, 
-    /* #ba000d,  */
     #f44336, 
     #ff7961,
-    /* #f1f1f1, */
     #ffffff); 
 }
 
